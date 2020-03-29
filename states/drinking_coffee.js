@@ -10,7 +10,7 @@ const drinking_coffee = {
 
   execute: (programmer, state_manager) => {
     programmer.need_for_coffee = programmer.need_for_coffee - 5;
-    console.log("Wonder how long I can spend here before my boss complains.....");
+    console.log("Wonder how long I can stay here before my boss starts complaining.....");
 
     if (programmer.need_for_coffee <= 0) {
       return state_manager.send_event(Commands.StopDrinkingCoffee, programmer);
