@@ -1,8 +1,8 @@
-const programmer = require("./model/programmer");
-const programming = require("./states/programming");
-const drinking_coffee = require("./states/drinking_coffee");
-const sleeping = require("./states/sleeping");
-const retiring = require("./states/retiring");
+const programmer = require("../model/programmer");
+const programming = require("../states/programming");
+const drinking_coffee = require("../states/drinking_coffee");
+const sleeping = require("../states/sleeping");
+const retiring = require("../states/retiring");
 
 const transitions = [
   { on: "rested_enough", from: ["sleeping"], to: programming },
