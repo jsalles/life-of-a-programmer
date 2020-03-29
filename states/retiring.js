@@ -1,4 +1,6 @@
 const retiring = {
+  name: "retiring",
+
   enter: programmer => {
     console.log("That's it! I'm done!");
     programmer.location = "beach";
@@ -8,8 +10,7 @@ const retiring = {
     console.log("Stop bugging me... I'm done!");
   },
 
-  leave: () => {
-  }
+  leave: () => {}
 };
 
 module.exports = retiring;

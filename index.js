@@ -1,4 +1,3 @@
-const programmer = require("./model/programmer");
+const fsm = require("./state_manager");
 
-const programmerObj = new programmer();
-setInterval(() => programmerObj.update(), 1000);
+setInterval(() => fsm.step(), 1000);
