@@ -1,3 +1,5 @@
+const Commands = require("../state_manager/commands");
+
 const drinking_coffee = {
   name: "drinking_coffee",
 
@@ -8,10 +10,10 @@ const drinking_coffee = {
 
   execute: (programmer, state_manager) => {
     programmer.need_for_coffee = programmer.need_for_coffee - 5;
-    console.log("Wonder how long I can stay here before my boss starts complaining.....");
+    console.log("Wonder how long I can spend here before my boss complains.....");
 
     if (programmer.need_for_coffee <= 0) {
-      return state_manager.send_event("no_more_need_for_coffee");
+      return state_manager.send_event(Commands.StopDrinkingCoffee, programmer);
     }
   },
 

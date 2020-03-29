@@ -1,3 +1,5 @@
+const Commands = require("../state_manager/commands");
+
 const programming = {
   name: "programming",
 
@@ -13,13 +15,13 @@ const programming = {
     console.log("99 bugs on the board. Take one down, patch it around, 345 bugs on the board!");
 
     if (programmer.lines_of_code_written > 10) {
-      return state_manager.send_event("enough_code_written_for_life");
+      return state_manager.send_event(Commands.StopProgrammingForLife, programmer);
     }
     if (programmer.need_for_coffee > 3) {
-      return state_manager.send_event("need_coffee");
+      return state_manager.send_event(Commands.StopProgrammingForAWhile, programmer);
     }
     if (programmer.lines_of_code_in_mind > 5) {
-      return state_manager.send_event("too_many_lines_of_code_in_mind");
+      return state_manager.send_event(Commands.StopProgrammingForTheDay, programmer);
     }
   },
 

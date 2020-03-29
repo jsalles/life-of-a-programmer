@@ -1,3 +1,5 @@
+const Commands = require("../state_manager/commands");
+
 const sleeping = {
   name: "sleeping",
 
@@ -11,7 +13,7 @@ const sleeping = {
     console.log("ZZzzZzZz");
 
     if (programmer.lines_of_code_in_mind <= 0) {
-      return state_manager.send_event("rested_enough");
+      return state_manager.send_event(Commands.WakeUp, programmer);
     }
   },
 
