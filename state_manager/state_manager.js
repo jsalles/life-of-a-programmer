@@ -9,7 +9,7 @@ const fsm = {
     }
 
     return Promise.resolve()
-      .then(() => transition.before && transition.before(programmer, fsm))
+      .then(() => transition.before && transition.before(programmer))
       .then(() => {
         programmer.state = transition.to;
       })
